@@ -1,5 +1,5 @@
-github.com/caarlos0/httperr v1.2.0 h1:TxQkU7xnqscCRiz0PA6vVRp6TxVy1j7sXn7P3iW/3L4=
-github.com/caarlos0/httperr v1.2.0/go.mod h1:dIhSDmb0R948KsW/14HHm3RDEVRXyRxr8n6xDwNDcJE=
+github.com/caarlos0/httperr v1.3.0 h1:R+qDp4lcKc4/lXl1PEDFuzXLoqiP4KXlt+2AoX/j7Kw=
+github.com/caarlos0/httperr v1.3.0/go.mod h1:dIhSDmb0R948KsW/14HHm3RDEVRXyRxr8n6xDwNDcJE=
 github.com/go-sql-driver/mysql v1.6.0 h1:BCTh4TKNUYmOmMUcQ3IipzF5prigylS7XXjEkfCHuOE=
 github.com/go-sql-driver/mysql v1.6.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/jmoiron/sqlx v1.3.5 h1:vFFPA71p1o5gAeqtEAwLU4dnX2napprKtHr7PYIcN3g=

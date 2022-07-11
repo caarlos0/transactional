@@ -23,13 +23,13 @@ type Transactional struct {
 }
 
 // WrapF wraps the given http handler func within a transaction.
-func (t *Transactional) WrapF(h HandlerFunc) http.Handler {
-	return t.Wrap(Handler(h))
+func (t *Transactional) WrapF(h HandlerFunc, eh httperr.ErrorHandler) http.Handler {
+	return t.Wrap(Handler(h), eh)
 }
 
 // Wrap wraps the given http handler within a transaction.
-func (t *Transactional) Wrap(h Handler) http.Handler {
-	return httperr.NewF(func(w http.ResponseWriter, r *http.Request) error {
+func (t *Transactional) Wrap(h Handler, eh httperr.ErrorHandler) http.Handler {
+	return httperr.NewFWithHandler(func(w http.ResponseWriter, r *http.Request) error {
 		ctx := r.Context()
 		ptx := ctx.Value(txKey{})
 		if ptx != nil {
@@ -44,7 +44,7 @@ func (t *Transactional) Wrap(h Handler) http.Handler {
 			ctx = context.WithValue(ctx, txKey{}, tx)
 			return h.ServeHTTP(tx, w, r.WithContext(ctx))
 		})
-	})
+	}, eh)
 }
 
 // WrapFn wraps a function within a transaction.
