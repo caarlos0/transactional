@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/caarlos0/httperr"
+	"github.com/caarlos0/httperr/v2"
 	"github.com/jmoiron/sqlx"
 )
 
